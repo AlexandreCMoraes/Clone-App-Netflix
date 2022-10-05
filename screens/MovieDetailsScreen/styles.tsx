@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  // imagem do filme
   image: {
     top: 60,
     width: "100%",
@@ -8,13 +9,14 @@ const styles = StyleSheet.create({
     aspectRatio: 16 / 9,
     resizeMode: "cover",
   },
+  // informações do filme
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
   },
   match: {
-    color: "#",
+    color: "#1B5128",
     fontWeight: "bold",
     marginRight: 5,
   },
@@ -32,6 +34,33 @@ const styles = StyleSheet.create({
   },
   age: {
     color: "black",
+    fontWeight: "bold",
+  },
+  // botoes e textos de play e download
+  playButton: {
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5,
+    borderRadius: 3,
+    marginVertical: 5,
+  },
+  playButtonText: {
+    color: "black",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  downloadButton: {
+    backgroundColor: "#2b2b2b",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5,
+    borderRadius: 3,
+    marginVertical: 5,
+  },
+  downloadButtonText: {
+    color: "white",
+    fontSize: 16,
     fontWeight: "bold",
   },
 });
