@@ -2,6 +2,8 @@ import { FlatList, Image, Text, View } from "react-native";
 
 import styles from "./styles";
 
+// tipo da propriedade que vai receber e renderizar
+
 interface HomeCategoryProps {
   category: {
     id: string;

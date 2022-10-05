@@ -1,11 +1,15 @@
 import React from "react";
-import { Image, Pressable, Text, View } from "react-native";
+import { FlatList, Image, Pressable, Text, View } from "react-native";
+
 import { AntDesign, Entypo, Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 import styles from "./styles";
 
 import movie from "../../assets/data/movie";
-const firstEpisode = movie.seasons.items[0].episodes.items[0];
+import EpisodeItem from "../../components/EpisodeItem";
+
+const firstSeason = movie.seasons.items[0];
+// const firstEpisode = movie.seasons.items[0].episodes.items[0];
 
 export default function MovieDetailsScreen() {
   return (
@@ -13,6 +17,10 @@ export default function MovieDetailsScreen() {
       {/* poster do filme com as informações logo abaixo */}
       <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
       <View style={{ padding: 15, top: 60, backgroundColor: "#111313" }}>
+        
+        {/* renderizando episodios */}
+        {/* <EpisodeItem episode={firstEpisode} /> */}
+        
         {/* info do filme */}
         <Text style={styles.title}>{movie.title}</Text>
         <View style={{ flexDirection: "row" }}>
@@ -73,6 +81,9 @@ export default function MovieDetailsScreen() {
           </View>
         </View>
       </View>
+      
+      <FlatList 
+      data={movie.seasons}/>
     </View>
   );
 }
