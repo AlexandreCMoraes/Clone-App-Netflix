@@ -1,4 +1,4 @@
-import { FlatList, Image, Text } from "react-native";
+import { FlatList, Image, Text, View } from "react-native";
 
 import styles from "./styles";
 
@@ -15,7 +15,7 @@ interface HomeCategoryProps {
 export default function HomeCategory(props: HomeCategoryProps) {
   const { category } = props;
   return (
-    <>
+    <View style={styles.container}>
       <Text style={styles.title}>{category.title}</Text>
       <FlatList
         data={category.movies}
@@ -29,6 +29,6 @@ export default function HomeCategory(props: HomeCategoryProps) {
         )}
         horizontal
       />
-    </>
+    </View>
   );
 }

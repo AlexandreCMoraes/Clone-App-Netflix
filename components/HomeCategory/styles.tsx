@@ -3,8 +3,9 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 15,
-    // backgroundColor: "grey",
+    // paddingTop: 10,
+    // padding: 2,
+    top: 15
   },
   image: {
     width: 100,
