@@ -21,6 +21,7 @@ export default function EpisodeItem(props: EpisodeItemProps) {
   // desestruturando episode
   const { episode } = props;
   return (
+    // TODO verificar distancia
     <View>
       <View style={styles.row}>
         <Image style={styles.image} source={{ uri: episode.poster }} />
