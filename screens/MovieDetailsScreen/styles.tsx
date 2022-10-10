@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   image: {
     top: 60,
     width: "100%",
-    // height: 100,
     aspectRatio: 16 / 9,
     resizeMode: "cover",
   },
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
     color: "black",
     fontWeight: "bold",
   },
-  // botoes e textos de play e download
+  // botoes e textos de play e download (play)
   playButton: {
     backgroundColor: "white",
     justifyContent: "center",
@@ -50,6 +49,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+  // botoes e textos de play e download (donwload)
   downloadButton: {
     backgroundColor: "#2b2b2b",
     justifyContent: "center",

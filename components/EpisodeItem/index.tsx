@@ -22,7 +22,8 @@ export default function EpisodeItem(props: EpisodeItemProps) {
   const { episode } = props;
   return (
     // TODO verificar distancia
-    <View>
+    <View style={{marginHorizontal:10}}>
+        {/* imagem de do episodio, titulo, duração, botoes... */}
       <View style={styles.row}>
         <Image style={styles.image} source={{ uri: episode.poster }} />
         <View style={styles.titleContainer}>
