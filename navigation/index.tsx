@@ -58,12 +58,12 @@ function RootNavigator() {
       <Stack.Screen
         name="MovieDetailsScreen"
         component={MovieDetailsScreen}
-        options={{ title: "MovieDetailsScreen" }}
+        // options={{ title: "MovieDetailsScreen" }}
       />
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ title: "MovieDetailsScreen" }}
+        // options={{ title: "MovieDetailsScreen" }}
       />
 
       <Stack.Screen
@@ -102,8 +102,8 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="Home"
         // TODO alterado para renderizar outra pagina component={HomeScreen}
-        component={MovieDetailsScreen}
-        // component={HomeScreen}
+        // component={MovieDetailsScreen}
+        component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<"Home">) => ({
           title: "Home",
           tabBarIcon: ({ color }) => (
