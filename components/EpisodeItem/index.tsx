@@ -1,29 +1,27 @@
 import { AntDesign } from "@expo/vector-icons";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
+import { Episode } from "../../types";
 // import { Text, View } from "../../components/Themed";
 
 import styles from "./styles";
 
 // tipo da propriedade que vai receber e renderizar
 interface EpisodeItemProps {
-  episode: {
-    id: string;
-    title: string;
-    poster: string;
-    duration: string;
-    plot: string;
-    video: string;
-  };
+  episode: Episode;
+  onPress: (episode: Episode) => {};
 }
 
 export default function EpisodeItem(props: EpisodeItemProps) {
   // desestruturando episode
-  const { episode } = props;
+  const { episode, onPress } = props;
   return (
     // TODO verificar distancia
-    <View style={{marginHorizontal:10}}>
-        {/* imagem de do episodio, titulo, duração, botoes... */}
+    <Pressable
+      style={{ marginHorizontal: 10 }}
+      onPress={() => onPress(episode)}
+    >
+      {/* imagem de do episodio, titulo, duração, botoes... */}
       <View style={styles.row}>
         <Image style={styles.image} source={{ uri: episode.poster }} />
         <View style={styles.titleContainer}>
@@ -33,6 +31,6 @@ export default function EpisodeItem(props: EpisodeItemProps) {
         <AntDesign name="download" size={24} color={"white"} />
       </View>
       <Text style={styles.plot}>{episode.plot}</Text>
-    </View>
+    </Pressable>
   );
 }

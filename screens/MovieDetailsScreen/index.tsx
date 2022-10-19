@@ -9,6 +9,7 @@ import styles from "./styles";
 
 import movie from "../../assets/data/movie";
 import EpisodeItem from "../../components/EpisodeItem";
+import VideoPlayer from "../../components/VideoPlayer";
 
 const firstSeason = movie.seasons.items[0];
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
@@ -16,17 +17,25 @@ const firstEpisode = movie.seasons.items[0].episodes.items[0];
 export default function MovieDetailsScreen() {
   // mudar entre temporadas
   const [currentSeason, setCurrentSeason] = useState(firstSeason);
+  //  exibindo video player no lugar do poster
+  const [currentEpisode, setCurrentEpisode] = useState(
+    firstSeason.episodes.items[0]
+  );
   // map nos obj e busca somente o nomes das temporadas3
   const seasonName = movie.seasons.items.map((seasons) => seasons.name);
 
   return (
     <View>
       {/* poster do filme com as informações logo abaixo */}
-      <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
+      {/* <Image style={styles.image} source={{ uri: firstEpisode.poster }} /> */}
+      {/* exibindo video player no lugar do poster */}
+      <VideoPlayer episode={currentEpisode} />
       {/* renderizando listas de episodios */}
       <FlatList
         data={currentSeason.episodes.items}
-        renderItem={({ item }) => <EpisodeItem episode={item} />}
+        renderItem={({ item }) => (
+          <EpisodeItem episode={item} onPress={setCurrentEpisode} />
+        )}
         style={{ marginBottom: 250 }}
         ListHeaderComponent={
           <View style={{ padding: 15, top: 60, backgroundColor: "#111313" }}>
@@ -36,7 +45,7 @@ export default function MovieDetailsScreen() {
               <Text style={styles.match}>98% match</Text>
               <Text style={styles.year}>{movie.year}</Text>
               <View style={styles.ageContainer}>
-                <Text style={styles.age}>12 +</Text>
+                <Text style={styles.age}>12+</Text>
               </View>
               <Text style={styles.year}>{movie.numberOfSeasons} Seasons</Text>
               <MaterialIcons name="hd" size={24} color="white" />

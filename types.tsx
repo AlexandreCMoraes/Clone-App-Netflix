@@ -20,16 +20,16 @@ export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
-  HomeScreen:undefined;
+  HomeScreen: undefined;
   MovieDetailsScreen: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, Screen>;
 
-  // add novas rotas
+// add novas rotas
 export type RootTabParamList = {
-  Home: undefined; 
+  Home: undefined;
   Coming_Soon: undefined;
   Search: undefined;
   Downloads: undefined;
@@ -42,3 +42,12 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
   >;
+
+export type Episode = {
+  id: string;
+  title: string;
+  poster: string;
+  duration: string;
+  plot: string;
+  video: string;
+};
